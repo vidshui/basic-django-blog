@@ -1,0 +1,132 @@
+body {
+  background: #ffe6f7;
+  color: #333333;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ff66b2;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #f28bb2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #e44b8d;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #f1c6d0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.article-title {
+  color: #ff66b2;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+a.article-title:hover {
+  color: #ff3385;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #555555;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+  border-radius: 50%;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #f1c6d0;
+}
+
+.article-metadata a:hover {
+  color: #ff66b2;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  border: 3px solid #f1c6d0;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+  color: #ff66b2;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #ff3385;
+  transition: color 0.3s ease;
+}
+
+/* Custom pink outline button */
+.btn-outline-pink {
+  color: #ff66b2;
+  background-color: transparent;
+  border: 2px solid #ff66b2;
+}
+
+/* Custom filled pink button */
+.btn-pink {
+  color: white;
+  background-color: #ff66b2;
+  border: 2px solid #ff66b2;
+}
+
+/* Hover effect for both pink buttons */
+.btn-outline-pink:hover, .btn-pink:hover {
+  color: white;
+  background-color: #ff66b2;
+  border-color: #ff66b2;
+}
