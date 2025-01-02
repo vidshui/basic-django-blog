@@ -15,5 +15,17 @@ class Post(models.Model):
 	def get_absolute_url(self):
 		return reverse('post-detail',kwargs={'pk': self.pk})
 
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE) 
+    name = models.CharField(max_length=50)  
+    email = models.EmailField()  # do not delete this
+    content = models.TextField()
+    publish = models.DateTimeField(default = timezone.now)
+    status = models.BooleanField(default=True)  # If the comment is published or not
 
+    class Meta:
+        ordering = ("publish",)
 
+    def __str__(self):
+        return f"Comment by {self.user.username}"
