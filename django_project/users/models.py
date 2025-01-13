@@ -13,7 +13,7 @@ class Profile(models.Model):
         # Call the parent save method with all arguments
         super().save(*args, **kwargs)
 
-        # Perform image resizing if the image is too large
+        # if image is too large
         img = Image.open(self.image.path)
 
         if img.height > 300 or img.width > 300:

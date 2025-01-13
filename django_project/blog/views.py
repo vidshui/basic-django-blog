@@ -6,6 +6,8 @@ from .models import Post
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import NewCommentForm
+from django.contrib import messages
+
 
 def home(request):
 	context = {
@@ -43,7 +45,7 @@ class PostDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         post = self.get_object()
         
-        # Get all approved comments for the post
+        # imp
         comments = post.comments.filter(status=True)
         
         context['comments'] = comments
@@ -63,6 +65,7 @@ class PostDetailView(DetailView):
             user_comment.post = post  # Associate comment with the current post
             user_comment.user = request.user  # Set the user to the currently logged-in user
             user_comment.save()  # Now save the comment
+            messages.success(request, 'Your comment has been added successfully :D')
 
            
             return redirect('post-detail', pk=post.pk)

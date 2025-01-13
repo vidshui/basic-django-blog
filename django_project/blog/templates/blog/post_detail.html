@@ -13,9 +13,6 @@
             <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
           </div>
         {% endif %}
-
-
-
       </div>
       <h2 class="article-title">{{ object.title }}</h2>
       <p class="article-content">{{ object.content }}</p>
@@ -23,23 +20,23 @@
   </article>
 
 
-
-
-
-
   <h3>Comments</h3>
   {% if comments %}
     {% for comment in comments %}
       <div class="media">
         <div class="media-body">
-          <h5 class="mt-0">{{ comment.user.username }} <small class="text-muted">{{ comment.publish }}</small></h5>
+
+          <a href="{% url 'user-posts' comment.user.username %}" class="mt-0">{{ comment.user.username }} <small class="text-muted">{{ comment.publish }}</small></a>
           <p>{{ comment.content }}</p>
+
+          {% if comment.image %}
+            <img src="{{ comment.image.url }}" alt="Comment Image" class="img-fluid">
+          {% endif %}
 
           <!-- Delete button for the comment (only if the logged-in user is the author) -->
 			{% if comment.user == user %}
 			<a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger btn-sm">Delete</a>
 			{% endif %}
-
         </div>
       </div>
     {% endfor %}
@@ -48,7 +45,7 @@
   {% endif %}
 
   <h4>Leave a Comment:</h4>
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ comment_form.as_p }}
     <button type="submit" class="btn btn-primary">Submit Comment</button>

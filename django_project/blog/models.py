@@ -22,6 +22,7 @@ class Comment(models.Model):
     email = models.EmailField()  # do not delete this
     content = models.TextField()
     publish = models.DateTimeField(default = timezone.now)
+    image = models.ImageField(upload_to='comment_images/', blank=True, null=True)
     status = models.BooleanField(default=True)  # If the comment is published or not
 
     class Meta:
